@@ -1,0 +1,131 @@
+/* Loading font-face and global styles in a stand-alone CSS file to avoid multiple font loads (FOUT) */
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: block;
+  src: url("/fonts/proxima-nova/regular.woff2") format("woff2"),
+    url("/fonts/proxima-nova/regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova Bold";
+  font-display: block;
+  src: url("/fonts/proxima-nova/semiBold.woff2") format("woff2"),
+    url("/fonts/proxima-nova/semiBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  /* ========================== Typography ========================== */
+  --proxima-nova: "Proxima Nova", Arial, Helvetica, sans-serif;
+  --proxima-nova-bold: "Proxima Nova Bold", Arial, Helvetica, sans-serif;
+
+  /* ========================== Fluid Typography ========================== */
+  --base-font-size-small: 14px;
+  --base-font-size-large: 16px;
+  --base-line-height: 1.5;
+  /* HEADING TYPE SCALE */
+  /* Headline */
+  --h1-size: 3.247rem;
+  /* Title */
+  --h2-size: 2.566rem;
+  /* Nav Heading */
+  --h3-size: 2.027rem;
+  /* Subtitle Medium */
+  --h4-size: 1.602rem;
+  /* Subtitle Small */
+  --h5-size: 1.266rem;
+
+  /* ========================== Breakpoints ========================== */
+  --tablet-portrait: 600px;
+  --tablet-landscape: 900px;
+  --desktop: 1200px;
+  --desktop-large: 1600px;
+  --desktop-xlarge: 2100px;
+
+  /* ========================== Colors ========================== */
+  --dark-blue: #060817;
+  --highlight-blue: #2fb2fc;
+}
+
+/* ========================== Fluid Typography ========================== */
+html,
+body,
+button {
+  font-family: var(--proxima-nova);
+  font-size: var(--base-font-size-small);
+  line-height: var(--base-line-height);
+}
+
+@media only screen and (min-width: 600px) {
+  html,
+  body,
+  button,
+  a {
+    font-size: var(--base-font-size-large);
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  html,
+  body,
+  button,
+  a {
+    font-size: 1vw;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+strong {
+  font-family: var(--proxima-nova-bold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--proxima-nova-bold);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+h2 {
+  font-size: var(--h2-size);
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+h4 {
+  font-size: var(--h4-size);
+}
+
+h5 {
+  font-size: var(--h5-size);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
